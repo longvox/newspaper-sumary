@@ -51,7 +51,6 @@ export default {
       let params = this.$route.params
       let category = params.category || 'trang-chu'
       let express = params.express || 'vnexpess'
-      console.log(params)
       this.listNewsPaper = this.$store.state.dataAll[express][category]
     },
     loadFirstContent () {

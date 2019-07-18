@@ -19,15 +19,18 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarColor01">
         <headerLink />
+        <Search />
       </div>
 
     </nav>
 </template>
 <script>
 import HeaderLink from './HeaderLink'
+import Search from './Search'
 export default {
   components: {
-    HeaderLink
+    HeaderLink,
+    Search
   }
 }
 </script>

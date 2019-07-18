@@ -13,7 +13,9 @@ Vue.use(VueAxios, axios)
 export default new Vuex.Store({
   state: {
     dataAll: {},
-    flag: false
+    flag: false,
+    dataSearch: [],
+    searchStatus: false
   },
   getters: {
     getDataAll (state) {
@@ -21,9 +23,15 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    getData (state, data) {
+    setData (state, data) {
       state.dataAll = data
       state.flag = true
+    },
+    setDataSearch (state, data) {
+      state.dataSearch = data
+    },
+    setSearchStatus (state, data) {
+      state.searchStatus = data
     }
   },
   actions: {
@@ -39,7 +47,34 @@ export default new Vuex.Store({
             })
         })
       })
-      commit('getData', dataAll)
+      commit('setData', dataAll)
+    },
+    matchDataSearch ({ commit }, keywords) {
+      let dataAll = this.state.dataAll
+      let dataSearch =
+        Object
+          .keys(this.state.dataAll)
+          .reduce((acc, key) => {
+            return [
+              ...acc,
+              ...Object
+                .keys(dataAll[key])
+                .reduce((ac, category) => {
+                  return [
+                    ...ac,
+                    ...dataAll[key][category]
+                      .filter(item => item.title.indexOf(keywords) >= 0)
+                  ]
+                }, [])
+            ]
+          }, [])
+      dataSearch.length = Math.min(dataSearch.length, 30)
+      dataSearch = dataSearch || []
+
+      commit('setDataSearch', dataSearch)
+    },
+    statusSearch ({ commit }, status) {
+      commit('setSearchStatus', status)
     }
   }
 })

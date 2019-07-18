@@ -5,6 +5,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import NotFound from '@/components/404'
 import HomePage from '@/components/HomePage'
+import Search from '@/components/Search'
 
 Vue.use(VueAxios, axios)
 Vue.use(Router)
@@ -27,6 +28,11 @@ export default new Router({
       path: '/',
       name: 'homepage',
       component: HomePage
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: Search
     },
     {
       path: '*',
