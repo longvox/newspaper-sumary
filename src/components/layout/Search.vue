@@ -1,18 +1,23 @@
 <template>
   <div>
     <form class="form-inline">
-      <input class="form-control mr-sm-2"
-      type="text"
-      placeholder="Search"
-      @input='inputSearch'
-      v-model="keywords"
-      @focus="statusActive(true)"
-      @blur="statusActive(false)"/>
+      <input
+        class="form-control mr-sm-2"
+        type="text"
+        placeholder="Search"
+        @input="inputSearch"
+        v-model="keywords"
+        @focus="statusActive(true)"
+        @blur="statusActive(false)"
+      >
       <router-link
-      tag='button'
-      class="btn btn-success"
-      :to='{name: "search"}'
-      type="submit">Search</router-link>
+        tag="button"
+        class="btn btn-success"
+        :to="{name: &quot;search&quot;}"
+        type="submit"
+      >
+        Search
+      </router-link>
     </form>
   </div>
 </template>

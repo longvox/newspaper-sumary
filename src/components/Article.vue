@@ -1,19 +1,27 @@
 <template>
   <div>
-    <div class='card mb-3'>
-      <div class='row'>
-        <div class='col-md-4'>
+    <div class="card mb-3">
+      <div class="row">
+        <div class="col-md-4">
           <img
-             :src='article.thumbnail'
-            class='w-100'
-          />
+            :src="article.thumbnail"
+            class="w-100"
+          >
         </div>
-        <div class='col-md-8 px-3'>
-          <div class='card-block px-3'>
-            <h4 class='card-title'>{{article.title}}</h4>
-            <span>{{dateTime | moment('dddd, MMMM Do YYYY, h:mm a ') | changeDateOfWeekE2V }}</span>
-            <p class='card-text' v-html='normalize(article.description)'></p>
-            <a :href='article.link' class='btn btn-primary ml-auto'>Đọc tiếp ...</a>
+        <div class="col-md-8 px-3">
+          <div class="card-block px-3">
+            <h4 class="card-title">
+              {{ article.title }}
+            </h4>
+            <span>{{ dateTime | moment('dddd, MMMM Do YYYY, h:mm a ') | changeDateOfWeekE2V }}</span>
+            <p
+              class="card-text"
+              v-html="normalize(article.description)"
+            />
+            <a
+              :href="article.link"
+              class="btn btn-primary ml-auto"
+            >Đọc tiếp ...</a>
           </div>
         </div>
       </div>

@@ -1,12 +1,12 @@
 <template>
-  <div class='hello'>
-    <div class='container mb-3'>
-      <div class='row'>
+  <div class="hello">
+    <div class="container mb-3">
+      <div class="row">
         <Article
-          v-for='(article, key) in listNewsPaper'
-          :key='key'
-          :article='article'
-          class='container-fluid'
+          v-for="(article, key) in listNewsPaper"
+          :key="key"
+          :article="article"
+          class="container-fluid"
         />
       </div>
     </div>

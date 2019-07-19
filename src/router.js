@@ -11,7 +11,7 @@ Vue.use(VueAxios, axios)
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes: [
     {
@@ -35,7 +35,7 @@ export default new Router({
       component: Search
     },
     {
-      path: '*',
+      path: '/*',
       name: 'notfound',
       component: NotFound
     }

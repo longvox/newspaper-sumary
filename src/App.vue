@@ -1,9 +1,15 @@
 <template>
   <div id="app">
-    <Header/>
-    <div id="wrapper" class="d-flex">
-      <SideBar class='col-md-3 px-0' v-if='isblankLink'/>
-      <router-view class="page-content-wrapper col-md-9"/>
+    <Header />
+    <div
+      id="wrapper"
+      class="d-flex"
+    >
+      <SideBar
+        class="col-md-3 px-0"
+        v-if="isblankLink"
+      />
+      <router-view class="page-content-wrapper col-md-9" />
       <PopupSearch />
     </div>
   </div>

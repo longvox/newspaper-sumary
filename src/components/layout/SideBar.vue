@@ -1,13 +1,18 @@
 <template>
   <div class="bg-light border-right">
-      <div class="list-group list-group-flush">
+    <div class="list-group list-group-flush">
       <router-link
-      tag="a" v-for='(item,key) in listSubData'
-      :to='{ name: "subexpress", params: { express: $route.params.express  , category: item.category }}'
-      class="list-group-item bg-dark"
-      :key='key' active-class='active'>{{item.name}}</router-link>
-      </div>
+        tag="a"
+        v-for="(item,key) in listSubData"
+        :to="{ name: &quot;subexpress&quot;, params: { express: $route.params.express , category: item.category }}"
+        class="list-group-item bg-dark"
+        :key="key"
+        active-class="active"
+      >
+        {{ item.name }}
+      </router-link>
     </div>
+  </div>
 </template>
 
 <script>
