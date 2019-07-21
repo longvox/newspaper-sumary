@@ -15,16 +15,6 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/:express/',
-      name: 'express',
-      component: NewPaper,
-      children: [{
-        path: ':category',
-        name: 'subexpress',
-        component: NewPaper
-      }]
-    },
-    {
       path: '/',
       name: 'homepage',
       component: HomePage
@@ -33,6 +23,16 @@ export default new Router({
       path: '/search',
       name: 'search',
       component: Search
+    },
+    {
+      path: '/:express/',
+      name: 'express',
+      component: NewPaper,
+      children: [{
+        path: ':category',
+        name: 'subexpress',
+        component: NewPaper
+      }]
     },
     {
       path: '/*',
